@@ -13,5 +13,5 @@ export class CustomerRepositoryService {
   getcustomers(): Observable<Icustomer[]> {
     return this.http.get(this.Base_Url)
       .map((response: Response) => response.json());
-  }
+    }
 }
