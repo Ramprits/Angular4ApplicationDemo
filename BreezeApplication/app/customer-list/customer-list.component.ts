@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerRepositoryService } from './customer-repository.service';
+import { Icustomer } from '../model/icustomer';
 
 @Component({
   selector: 'yo-customer-list',
@@ -7,7 +8,7 @@ import { CustomerRepositoryService } from './customer-repository.service';
   styleUrls: ['./customer-list.component.scss']
 })
 export class CustomerListComponent implements OnInit {
-  customers: any[];
+  customers: Icustomer[];
   constructor(private _customerRepo: CustomerRepositoryService) { }
 
   ngOnInit() {
