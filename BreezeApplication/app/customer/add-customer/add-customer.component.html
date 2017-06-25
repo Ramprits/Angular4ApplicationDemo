@@ -9,7 +9,7 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Name</label>
         <div class="col-md-4">
-          <input id="textinput" name="textinput" type="text" formControlName="name" placeholder="Please Entere Name" class="form-control input-md"
+          <input id="textinput" name="textinput" type="text" formControlName="name" autofocus placeholder="Please Entere Name" class="form-control input-md"
             required="">
           <span class="help-block text-danger" *ngIf="!customer.controls['name'].valid && customer.controls['name'].touched">Please Enter Name</span>
         </div>

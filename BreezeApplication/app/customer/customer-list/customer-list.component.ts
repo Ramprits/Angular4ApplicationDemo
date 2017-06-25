@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerRepositoryService } from './customer-repository.service';
-import { Icustomer } from '../model/icustomer';
+import { Icustomer } from '../../model/icustomer';
 
 @Component({
   selector: 'yo-customer-list',

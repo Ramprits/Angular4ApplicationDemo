@@ -10,12 +10,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CustomerListComponent } from './customer-list/customer-list.component';
+import { CustomerListComponent } from './customer/customer-list/customer-list.component';
 import { GridModule } from '@progress/kendo-angular-grid';
-import { CustomerRepositoryService } from './customer-list/customer-repository.service';
+import { CustomerRepositoryService } from './customer/customer-list/customer-repository.service';
 import { BreezeBridgeAngularModule } from 'breeze-bridge-angular';
-import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { AddCustomerComponent } from './customer/add-customer/add-customer.component';
 import { PathNotFoundComponent } from './PathNotFoundComponent';
+import { ToastrService } from './shared/toastr.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { PathNotFoundComponent } from './PathNotFoundComponent';
     BreezeBridgeAngularModule,
     ReactiveFormsModule
   ],
-  providers: [CustomerRepositoryService],
+  providers: [CustomerRepositoryService, ToastrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
