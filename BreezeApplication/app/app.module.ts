@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 // Import the Animations module
@@ -14,11 +14,15 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { CustomerRepositoryService } from './customer-list/customer-repository.service';
 import { BreezeBridgeAngularModule } from 'breeze-bridge-angular';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { PathNotFoundComponent } from './PathNotFoundComponent';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    AddCustomerComponent,
+    PathNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,8 @@ import { BreezeBridgeAngularModule } from 'breeze-bridge-angular';
     BrowserAnimationsModule,
     ButtonsModule,
     GridModule,
-    BreezeBridgeAngularModule
+    BreezeBridgeAngularModule,
+    ReactiveFormsModule
   ],
   providers: [CustomerRepositoryService],
   bootstrap: [AppComponent]

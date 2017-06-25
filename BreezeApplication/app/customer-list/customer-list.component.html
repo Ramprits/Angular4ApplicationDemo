@@ -1,14 +1,41 @@
-
-<kendo-grid [data]="customers" [height]="500">
-  <kendo-grid-column field="firstName" title="First Name" width="40">
-  </kendo-grid-column>
-  <kendo-grid-column field="middleName" title="Middle Name" width="40">
-  </kendo-grid-column>
-  <kendo-grid-column field="lastName" title="Last Name" width="40">
-  </kendo-grid-column>
-  <kendo-grid-column field="birthDate" title="Birth Date" width="40">
-  </kendo-grid-column>
-  <kendo-grid-column field="maritalStatus" title="Marital Status" width="40">
-  </kendo-grid-column>
-</kendo-grid>
-
+<div class="sr-only">
+  <div class="text-primary" *ngIf="errorMessage">
+    {{errorMessage}}</div>
+  <kendo-grid [data]="customers" [height]="500">
+    <kendo-grid-column field="customerId" title="Customer Id" width="40">
+    </kendo-grid-column>
+    <kendo-grid-column field="name" title="Name" width="40">
+    </kendo-grid-column>
+    <kendo-grid-column field="email" title="Email" width="40">
+    </kendo-grid-column>
+    <kendo-grid-column field="phone" title="Phone" width="40">
+    </kendo-grid-column>
+  </kendo-grid>
+</div>
+<div class="table-responsive">
+  <a class="btn btn-primary btn-sm" [routerLink]="['/AddCustomer']">Add New Employee</a>
+  <table class="table table-bordered">
+    <thead class="bg-primary" style="color: white">
+      <tr>
+        <th>Customer Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <td class="text-center">Action</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers; let i=index">
+        <td scope="row">{{customer.customerId}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.phone}}</td>
+        <td>
+          <a [routerLink]="['routePath', routeParameterValue]" class="btn btn-primary btn-sm">Edit</a>
+          <a [routerLink]="['routePath', routeParameterValue]" class="btn btn-info btn-sm">Detail</a>
+          <a [routerLink]="['routePath', routeParameterValue]" class="btn btn-danger btn-sm">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

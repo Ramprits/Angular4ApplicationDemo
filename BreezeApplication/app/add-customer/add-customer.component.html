@@ -1,0 +1,51 @@
+<div class="container">
+  <form class="form-horizontal" [formGroup]="customer" (ngSubmit)="AddCustomer(customer.value)">
+    <fieldset>
+      <span *ngIf="errorMessage">{{errorMessage}}</span>
+      <!-- Form Name -->
+      <legend class="well well-sm">Add Customer </legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Name</label>
+        <div class="col-md-4">
+          <input id="textinput" name="textinput" type="text" formControlName="name" placeholder="Please Entere Name" class="form-control input-md"
+            required="">
+          <span class="help-block text-danger" *ngIf="!customer.controls['name'].valid && customer.controls['name'].touched">Please Enter Name</span>
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="email">Email Adrress</label>
+        <div class="col-md-4">
+          <input id="email" name="email" type="email" formControlName="email" placeholder="Please Enter Email" class="form-control input-md"
+            required="">
+          <span class="help-block text-danger" *ngIf="!customer.controls['email'].valid && customer.controls['email'].touched">Please Enter Email</span>
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="moble">phone</label>
+        <div class="col-md-4">
+          <input id="moble" name="moble" type="text" formControlName="phone" placeholder="Please Enter phone" class="form-control input-md"
+            required="">
+          <span class="help-block text-danger" *ngIf="!customer.controls['phone'].valid && customer.controls['phone'].touched">Please Enter phone</span>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="btnSave"></label>
+        <div class="col-md-4">
+          <button id="btnSave" name="btnSave" class="btn btn-primary btn-sm" [disabled]="!customer.valid">Save</button>
+
+          <a [routerLink]="['/customers']" class="btn btn-primary btn-sm">Back</a>
+
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+</div>

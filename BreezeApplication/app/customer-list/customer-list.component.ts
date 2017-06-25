@@ -8,11 +8,13 @@ import { Icustomer } from '../model/icustomer';
   styleUrls: ['./customer-list.component.scss']
 })
 export class CustomerListComponent implements OnInit {
-  customers: Icustomer[];
+  errorMessage: any;
+  customers: Array<Icustomer>;
   constructor(private _customerRepo: CustomerRepositoryService) { }
 
   ngOnInit() {
-    this._customerRepo.getcustomers().subscribe(customer => this.customers = customer);
+    this._customerRepo.getcustomers().
+      subscribe(customer => this.customers = customer, error => this.errorMessage = <any>error);
   }
 
 }
