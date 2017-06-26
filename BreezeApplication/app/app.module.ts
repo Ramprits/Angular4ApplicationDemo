@@ -16,9 +16,12 @@ import { CustomerRepositoryService } from './customer/customer-list/customer-rep
 import { BreezeBridgeAngularModule } from 'breeze-bridge-angular';
 import { AddCustomerComponent } from './customer/add-customer/add-customer.component';
 import { PathNotFoundComponent } from './PathNotFoundComponent';
-import { ToastrService } from './shared/toastr.service';
-import { CustomerDetailComponent } from './customer/customer-detail/customer-detail.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { EmployeeDetailComponent } from './customer/customer-detail/customer-detail.component';
+import { ToastrService } from './common/toastr.service';
+import { EventService } from './events/shared/event.service';
+import { EventsListComponent } from './events/events-list.component';
+import { EventThumbnailComponent } from './events/event-thumbnail.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +29,10 @@ import { WelcomeComponent } from './welcome/welcome.component';
     CustomerListComponent,
     AddCustomerComponent,
     PathNotFoundComponent,
-    CustomerDetailComponent,
-    WelcomeComponent
+    EmployeeDetailComponent,
+    WelcomeComponent,
+    EventsListComponent,
+    EventThumbnailComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     BreezeBridgeAngularModule,
     ReactiveFormsModule
   ],
-  providers: [CustomerRepositoryService, ToastrService],
+  providers: [CustomerRepositoryService, ToastrService, EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

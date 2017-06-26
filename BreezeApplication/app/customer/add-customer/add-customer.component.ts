@@ -1,7 +1,6 @@
 import { RouterModule, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, FormArray, Validators, FormControlName } from '@angular/forms';
-import { ToastrService } from '../../shared/toastr.service';
 import { CustomerRepositoryService } from '../customer-list/customer-repository.service';
 import { Icustomer } from '../../model/icustomer';
 
@@ -16,7 +15,7 @@ export class AddCustomerComponent implements OnInit {
   title = 'Add Customer';
   customer: FormGroup;
   errorMessage: any;
-  constructor(private fb: FormBuilder, private toastr: ToastrService,
+  constructor(private fb: FormBuilder,
     private customerService: CustomerRepositoryService,
     private router: Router) {
     this.customer = fb.group({
