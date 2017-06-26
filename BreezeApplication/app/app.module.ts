@@ -17,13 +17,17 @@ import { BreezeBridgeAngularModule } from 'breeze-bridge-angular';
 import { AddCustomerComponent } from './customer/add-customer/add-customer.component';
 import { PathNotFoundComponent } from './PathNotFoundComponent';
 import { ToastrService } from './shared/toastr.service';
+import { CustomerDetailComponent } from './customer/customer-detail/customer-detail.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerListComponent,
     AddCustomerComponent,
-    PathNotFoundComponent
+    PathNotFoundComponent,
+    CustomerDetailComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

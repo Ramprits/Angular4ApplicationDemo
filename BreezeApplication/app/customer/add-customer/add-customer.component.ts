@@ -13,6 +13,7 @@ import { Icustomer } from '../../model/icustomer';
 export class AddCustomerComponent implements OnInit {
   customers: Icustomer;
   errorMessege: any;
+  title = 'Add Customer';
   customer: FormGroup;
   errorMessage: any;
   constructor(private fb: FormBuilder, private toastr: ToastrService,

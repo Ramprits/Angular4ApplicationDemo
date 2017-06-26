@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container offset-3">
   <form class="form-horizontal" [formGroup]="customer" (ngSubmit)="AddCustomer(customer.value)">
     <fieldset>
       <span *ngIf="errorMessage">{{errorMessage}}</span>
       <!-- Form Name -->
-      <legend class="well well-sm">Add Customer </legend>
+      <legend class="well well-sm">{{title}} </legend>
 
       <!-- Text input-->
       <div class="form-group">
