@@ -6,12 +6,12 @@ import { ToastrService } from '../common/toastr.service'
   // tslint:disable-next-line:component-selector
   selector: 'events-list',
   template: `
-  <div>
+  <div class="offset-2">
     <h1>Upcoming Angular 2 Events</h1>
     <hr/>
     <div class="row">
-      <div *ngFor="let event of events" class="col-md-5">
-        <event-thumbnail (click)="handleThumbnailClick(event.name)" [event]="event"></event-thumbnail>
+      <div *ngFor="let event of events" class="col-5">
+      <event-thumbnail  (click)="eventName(event.name)" [event]="event"></event-thumbnail>
       </div>
     </div>
   </div>
@@ -19,16 +19,13 @@ import { ToastrService } from '../common/toastr.service'
 })
 export class EventsListComponent implements OnInit {
   events: any[]
-
   constructor(private eventService: EventService, private toastr: ToastrService) {
-
   }
-
   ngOnInit() {
-    this.events = this.eventService.getEvents()
+    this.events = this.eventService.getEvents();
+  }
+  eventName(data): void {
+    alert(data);
   }
 
-  handleThumbnailClick(eventName) {
-    this.toastr.success(eventName)
-  }
 }

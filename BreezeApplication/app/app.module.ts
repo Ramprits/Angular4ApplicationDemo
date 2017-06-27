@@ -22,6 +22,7 @@ import { ToastrService } from './common/toastr.service';
 import { EventService } from './events/shared/event.service';
 import { EventsListComponent } from './events/events-list.component';
 import { EventThumbnailComponent } from './events/event-thumbnail.component';
+import { EventDetailComponent } from './events/event-detail/event-detail.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EventThumbnailComponent } from './events/event-thumbnail.component';
     EmployeeDetailComponent,
     WelcomeComponent,
     EventsListComponent,
-    EventThumbnailComponent
+    EventThumbnailComponent,
+    EventDetailComponent
   ],
   imports: [
     BrowserModule,
