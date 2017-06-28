@@ -23,6 +23,8 @@ import { EventService } from './events/shared/event.service';
 import { EventsListComponent } from './events/events-list.component';
 import { EventThumbnailComponent } from './events/event-thumbnail.component';
 import { EventDetailComponent } from './events/event-detail/event-detail.component';
+import { EventRouteGuard } from './events/shared/event-CanActivateRoute';
+import { CustomerGuard } from './customer/customer-RouteGard';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,10 @@ import { EventDetailComponent } from './events/event-detail/event-detail.compone
     BreezeBridgeAngularModule,
     ReactiveFormsModule
   ],
-  providers: [CustomerRepositoryService, ToastrService, EventService],
+  providers: [CustomerRepositoryService, ToastrService,
+    EventService,
+    EventRouteGuard,
+    CustomerGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
